@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios'); // Import axios
 
 // The URL of your running Python Flask server
-const PYTHON_API_URL = 'http://127.0.0.1:5000/predict';
+const PYTHON_API_URL = 'https://skillbridge-python-api-0082.azurewebsites.net/predict';
 
 router.post('/predict', async (req, res) => {
     // Get data from the request body
@@ -29,5 +29,6 @@ router.post('/predict', async (req, res) => {
         res.status(500).json({ error: 'Could not get a prediction from the ML service.' });
     }
 });
+
 
 module.exports = router;
