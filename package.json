@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
    "test": "echo \"No tests to run\" && exit 0"
   },
   "keywords": [],
