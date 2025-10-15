@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-   "test": "echo \"No tests to run\" && exit 0"
+    "test": "echo \"No tests to run\" && exit 0"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "dialogflow-fulfillment": "^0.5.0",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.1"
   },
