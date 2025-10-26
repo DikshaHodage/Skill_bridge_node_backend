@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-dotenv.config();
+//dotenv.config();
 
 const app = express();
 
@@ -62,3 +62,4 @@ app.listen(PORT, () => {
 });
 
 // force deployment 
+
