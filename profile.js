@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/auth');
-const User = require('../models/User');
+const auth = require('./middleware/auth');
+const User = require('./User');
 
 // @route    GET /api/profile
 // @desc     Get user profile
@@ -46,5 +46,6 @@ router.post('/', auth, async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
 
 module.exports = router;
