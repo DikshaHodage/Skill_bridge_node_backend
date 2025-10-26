@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/auth'); // Assuming you have an auth middleware
-const User = require('../models/User'); // Assuming your user model is in 'models/User.js'
+const auth = require('./middleware/auth'); // Assuming you have an auth middleware
+const User = require('./User'); // Assuming your user model is in 'models/User.js'
 
 // @route   GET /api/courses/wishlist
 // @desc    Get user's wishlisted courses
@@ -55,5 +55,6 @@ router.post('/wishlist', auth, async (req, res) => {
     res.status(500).json({ msg: 'Server Error' });
 }
 });
+
 
 module.exports = router;
