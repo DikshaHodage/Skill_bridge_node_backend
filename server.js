@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 // const dotenv = require('dotenv');
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const authRoutes = require('./auth'); // Correct path for auth.js
+const profileRoutes = require('./profile'); // Add requires for other route files
+const courseRoutes = require('./courses');
+const roadmapRoutes = require('./roadmaps');
 
 //dotenv.config();
 
@@ -39,20 +43,11 @@ mongoose.connect(process.env.MONGO_URI)
 // -----------------------------------------
 
 
-// --- YOUR EXISTING AUTH API ROUTES (NO CHANGE) ---
-app.post('/api/auth/signup', async (req, res) => {
-    // ... your existing signup logic ...
-    console.log("Signup route hit with data:", req.body);
-    res.json({ message: "Signup route placeholder" });
-});
 
-app.post('/api/auth/signin', async (req, res) => {
-    // ... your existing signin logic ...
-    console.log("Signin route hit with data:", req.body);
-    res.json({ message: "Signin route placeholder" });
-});
-// ---------------------------------
-
+app.use('/api/auth', authRoutes); // Use auth.js for /api/auth/signup, /api/auth/signin
+app.use('/api/profile', profileRoutes); // Use profile.js for /api/profile
+app.use('/api/courses', courseRoutes); // Use courses.js for /api/courses
+app.use('/api/roadmaps', roadmapRoutes);
 
 // --- SERVER START (NO CHANGE) ---
 // This part is already perfect for the cloud
@@ -62,4 +57,5 @@ app.listen(PORT, () => {
 });
 
 // force deployment 
+
 
