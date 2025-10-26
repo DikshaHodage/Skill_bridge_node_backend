@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/auth');
-const User = require('../models/User');
+const auth = require('./middleware/auth');
+const User = require('./User');
 
 // @route   GET /api/roadmaps/my-roadmaps
 // @desc    Get user's saved roadmaps
@@ -40,5 +40,6 @@ router.post('/my-roadmaps', auth, async (req, res) => {
         res.status(500).json({ msg: 'Server Error' });
     }
 });
+
 
 module.exports = router;
